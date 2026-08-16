@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DSE Scrapers
 
 Scrapers for Dhaka Stock Exchange data. Each one exports **one dataset, for one
@@ -456,3 +457,6 @@ data/
 outputs/<scraper>/          newest file only, replaced each run
 logs/<date>/<time>/         run history: dated copy, log, config snapshot
 ```
+=======
+# research_total_scrapper
+>>>>>>> 0fa982a79fbba55fc093987b9a837fda05bab194
