@@ -1,0 +1,142 @@
+                      DHAKA STOCK EXCHANGE PLC.
+
+                  TODAY'S SHARE MARKET : 2026-08-13
+                  =================================
+
+
+All Category
+
+    ISSUES ADVANCED                 :                    135
+    ISSUES DECLINED                 :                    182
+    ISSUES UNCHANGED                :                     70
+    TOTAL ISSUES TRADED             :                    387
+
+
+A Category
+
+    ISSUES ADVANCED                 :                     69
+    ISSUES DECLINED                 :                     99
+    ISSUES UNCHANGED                :                     27
+    TOTAL ISSUES TRADED             :                    195
+
+
+B Category
+
+    ISSUES ADVANCED                 :                     25
+    ISSUES DECLINED                 :                     42
+    ISSUES UNCHANGED                :                      7
+    TOTAL ISSUES TRADED             :                     74
+
+
+N Category
+
+    ISSUES ADVANCED                 :                      0
+    ISSUES DECLINED                 :                      0
+    ISSUES UNCHANGED                :                      0
+    TOTAL ISSUES TRADED             :                      0
+
+
+Z Category
+
+    ISSUES ADVANCED                 :                     41
+    ISSUES DECLINED                 :                     41
+    ISSUES UNCHANGED                :                     36
+    TOTAL ISSUES TRADED             :                    118
+
+
+------------------------------------------------------------
+MUTUAL FUND (MF)
+
+    ISSUES ADVANCED                 :                      5
+    ISSUES DECLINED                 :                     16
+    ISSUES UNCHANGED                :                     13
+    TOTAL ISSUES TRADED             :                     34
+
+
+CORPORATE BOND (CB)
+
+    ISSUES ADVANCED                 :                      3
+    ISSUES DECLINED                 :                      0
+    ISSUES UNCHANGED                :                      0
+    TOTAL ISSUES TRADED             :                      3
+
+
+Govt. Sec (G-Sec)
+
+    ISSUES ADVANCED                 :                      0
+    ISSUES DECLINED                 :                      0
+    ISSUES UNCHANGED                :                      0
+    TOTAL ISSUES TRADED             :                      0
+
+
+------------------------------------------------------------
+TOTAL TRANSACTIONS
+
+    A. NO. OF TRADES                :                 239663
+    B. VOLUME(Nos.)                 :              299233097
+    C. VALUE(Tk)                    :          9256691953.10
+
+
+
+MARKET CAPITALISATION
+
+    1. EQUITY                       			:       3652734466499.00
+    2. MUTUAL FUND                  			:         33230764691.90
+    3. DEBT SECURITIES					:       3390190057676.10
+    TOTAL                           			:       7076155288867.00
+
+
+
+
+                    PRICES IN BLOCK TRANSACTIONS : 2026-08-13
+                    =========================================
+
+Instr Code    Max Price    Min Price    Trades    Quantity    Value(In Mn)
+
+AGNISYSL          29.00        29.00         1       17600           0.510
+ALLTEX            21.90        21.90         2       66534           1.457
+ARGONDENIM        26.50        26.50         1       20000           0.530
+BRACBANK          71.00        71.00         1        8845           0.628
+BXPHARMA         145.20       145.20         1       20000           2.904
+CITYBANK          28.20        28.20         1       41500           1.170
+CITYGENINS       118.00       118.00         1        8474           1.000
+CVOPRL           192.00       192.00         1        2650           0.509
+DAFODILCOM       165.00       163.00         8       90505          14.831
+DGIC              34.50        34.50         1      100000           3.450
+DOMINAGE          78.50        72.50         2      530000          38.605
+DULAMIACOT       226.60       226.60         1        5000           1.133
+FEKDIL            24.90        24.50         2       99990           2.470
+FINEFOODS        450.00       420.00         2       21750           9.488
+GENEXIL           40.60        40.60         1       45000           1.827
+GQBALLPEN        530.00       514.00         6       31599          16.538
+LHB               56.00        56.00         1      100000           5.600
+LOVELLO           71.60        71.60         1        6999           0.501
+MALEKSPIN         48.20        46.90         7      364100          17.429
+MATINSPINN        62.00        62.00         1       10000           0.620
+MLDYEING          18.90        18.60         2     1039000          19.622
+MONNOFABR         26.10        26.10         3       80000           2.088
+MPETROLEUM       204.00       204.00         1        4550           0.928
+NAVANAPHAR        76.30        76.30         1       14800           1.129
+PEOPLESINS        61.60        61.60         1        8900           0.548
+PHENIXINS         49.40        49.40         1       10500           0.519
+PRIMEINSUR        66.00        66.00         1       18600           1.228
+PTL               66.30        66.30         1       10000           0.663
+PURABIGEN         29.30        29.30         1       17065           0.500
+REPUBLIC          40.00        40.00         2       43500           1.740
+SAIHAMCOT         21.00        21.00         1       28000           0.588
+SAIHAMTEX         28.40        28.20         2      378000          10.703
+SAMORITA         103.00       103.00         1       50000           5.150
+SAPORTL           57.80        57.80         4      918946          53.115
+SHARPIND          42.50        41.00         3       65000           2.744
+SPCERAMICS        25.10        25.10         1       20100           0.505
+SPCL              58.20        58.20         1       32500           1.891
+SQURPHARMA       209.50       209.50         1        2800           0.587
+TRUSTBANK         15.60        15.60         4     1000000          15.600
+                                        ------    --------    ------------
+                                            74     5332807         241.048
+
+Total number of scrips traded in Block            =   39
+
+
+
+

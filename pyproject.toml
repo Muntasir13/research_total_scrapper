@@ -1,0 +1,29 @@
+[project]
+name = "dse-scrapping-company-details"
+version = "1.0.0"
+description = "Menu-driven scrapers that export Dhaka Stock Exchange datasets to Excel, one day at a time"
+authors = [
+    {name = "Muntasir Mohammad"}
+]
+readme = "README.md"
+# Upper bound is Hydra: 1.3.5 crashes on Python 3.14's stricter argparse.
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "pandas>=2.2",
+    "openpyxl>=3.1",
+    "requests>=2.32",
+    "lxml>=5.2",
+    "certifi>=2024.7.4",
+    "hydra-core>=1.3",
+    "python-json-logger>=3.1",
+]
+
+[project.scripts]
+dse-scrapers = "dse_scrapers.cli:main"
+
+[tool.poetry]
+packages = [{include = "dse_scrapers", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
