@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # DSE Scrapers
 
 Scrapers for Dhaka Stock Exchange data. Each one exports **one dataset, for one
@@ -12,14 +11,14 @@ prompt.
 One row per instrument DSE published for the day, in the column order the IDLC
 SL Uptick app expects:
 
-| Column | Source |
-| --- | --- |
-| `TradingDate` | A real Excel date cell, formatted `YYYY-MM-DD`. The original Uptick workbook stored a bare serial (`46246`); this diverges from it deliberately. |
-| `Exchange` | literal `DSE` |
-| `InstrumentName` | trading code |
-| `ISIN` | CDBL, matched by company name |
-| `LTP` `HIGH` `LOW` `OPENP` `CLOSEP` `YCP` `Trade` `Value` `Volume` | `day_end_archive.php` — **public market only** |
-| `MaxPrice` `MinPrice` `Trades` `Quantity` `ValueInMn` | `mst.txt` — **block market**, zero when the scrip had none |
+| Column                                                             | Source                                                                                                                                           |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `TradingDate`                                                      | A real Excel date cell, formatted `YYYY-MM-DD`. The original Uptick workbook stored a bare serial (`46246`); this diverges from it deliberately. |
+| `Exchange`                                                         | literal `DSE`                                                                                                                                    |
+| `InstrumentName`                                                   | trading code                                                                                                                                     |
+| `ISIN`                                                             | CDBL, matched by company name                                                                                                                    |
+| `LTP` `HIGH` `LOW` `OPENP` `CLOSEP` `YCP` `Trade` `Value` `Volume` | `day_end_archive.php` — **public market only**                                                                                                   |
+| `MaxPrice` `MinPrice` `Trades` `Quantity` `ValueInMn`              | `mst.txt` — **block market**, zero when the scrip had none                                                                                       |
 
 The two halves are additive, not overlapping. On 2026-08-12 the public columns
 summed to 267,572 trades and the block columns to 102, against the 267,674 DSE
@@ -87,10 +86,10 @@ to −767bn).
 **Valuation columns.** Two earnings bases, both priced off the scraped day's
 close so every ratio on a row shares one price:
 
-| | Source | Coverage |
-|---|---|---|
+|                | Source                                                                           | Coverage  |
+| -------------- | -------------------------------------------------------------------------------- | --------- |
 | **Annualized** | latest year-to-date interim EPS x 12 / months elapsed, read off the company page | 381 / 395 |
-| **LTM** | DSE's published Trailing P/E, inverted to an EPS | 213 / 395 |
+| **LTM**        | DSE's published Trailing P/E, inverted to an EPS                                 | 213 / 395 |
 
 Annualized is computed rather than taken from DSE's P/E 1 because DSE prints
 `n/a` for loss-makers; computing it directly still yields a real negative, and
@@ -127,9 +126,9 @@ returns every instrument at once, so a whole window is one request:
 old_news.php?startDate=&endDate=&criteria=4&archive=news
 ```
 
-Each disclosure reads *"On the close of operation on 12-Aug-2026 ... Tk. 6.56
+Each disclosure reads _"On the close of operation on 12-Aug-2026 ... Tk. 6.56
 per unit on the basis of current market price and Tk. 11.51 per unit on the
-basis of cost price"*. Three things make the parse fiddly:
+basis of cost price"_. Three things make the parse fiddly:
 
 - Both bases appear **twice** — once per unit, once as total net assets — so
   the figures are anchored on `per unit`.
@@ -138,7 +137,7 @@ basis of cost price"*. Three things make the parse fiddly:
   items anyway, because NAVANAPHAR's ticker contains "NAV". A body that parses
   is the test.
 
-`Date` is the *close of operation* date the NAV is as of, not the publication
+`Date` is the _close of operation_ date the NAV is as of, not the publication
 date — funds disclose the following day. A fund that skips a day carries its
 last NAV forward, which is what the date column is for; those are logged.
 
@@ -160,15 +159,15 @@ the US and Europe on the same run.
 
 Three sources:
 
-| | Source | Previous close |
-|---|---|---|
-| DSEX, DS30, DSES, CDSET, DSMEX | DSE homepage | first point of the intraday series |
-| 13 international | investing.com | `last - change` |
-| CSE All-Share | cse.lk JSON API | `value - change` |
+|                                | Source          | Previous close                     |
+| ------------------------------ | --------------- | ---------------------------------- |
+| DSEX, DS30, DSES, CDSET, DSMEX | DSE homepage    | first point of the intraday series |
+| 13 international               | investing.com   | `last - change`                    |
+| CSE All-Share                  | cse.lk JSON API | `value - change`                   |
 
 **Bangladesh** — DSE's index graphs are driven by intraday series embedded
 inline as `index_value_*` JavaScript variables. The first point of a series is
-the *previous* close, seeded at 09:59 before the open; the last is the current
+the _previous_ close, seeded at 09:59 before the open; the last is the current
 level. Verified against `recent_market_information.php`: for DSEX, DSES and
 DS30 the first point equals the prior day's published close exactly, which is
 what licenses the same trick for CDSET and DSMEX — neither appears in any
@@ -215,11 +214,11 @@ a stale December quote read in January needs.
 
 Two names needed resolving against the page:
 
-| Requested | Row used | Why |
-|---|---|---|
-| LNG Japan / Korea Marker PLATTS | `LNG JKM` | `/commodity/liquefied-natural-gas-japan-korea` — the page confirms it is the Japan-Korea Marker |
-| Iron Ore | `Iron Ore` | 62% Fe CFR China in USD/T, not `Iron Ore CNY` (Dalian, CNY/T) |
-| Steel | `Steel` | Shanghai rebar in CNY/T, not `HRC Steel` or `Scrap Steel` |
+| Requested                       | Row used   | Why                                                                                             |
+| ------------------------------- | ---------- | ----------------------------------------------------------------------------------------------- |
+| LNG Japan / Korea Marker PLATTS | `LNG JKM`  | `/commodity/liquefied-natural-gas-japan-korea` — the page confirms it is the Japan-Korea Marker |
+| Iron Ore                        | `Iron Ore` | 62% Fe CFR China in USD/T, not `Iron Ore CNY` (Dalian, CNY/T)                                   |
+| Steel                           | `Steel`    | Shanghai rebar in CNY/T, not `HRC Steel` or `Scrap Steel`                                       |
 
 Units are not normalised — they are whatever Trading Economics quotes in, and
 they are not all USD (UK Gas is GBp/thm, Steel is CNY/T). The `Unit` column is
@@ -259,7 +258,7 @@ became `1 June 2026`, and the file reports the revised date.
 **Cash Dividend is what this record date entitles holders to**, not the year's
 headline figure. Matches are taken in the order they appear, so Marico's
 "Final Cash Dividend of 500% ... (Total 2075% ... inclusive of 1575% Interim)"
-records the 500%. Where the declared figure *contains* an interim already
+records the 500%. Where the declared figure _contains_ an interim already
 paid, that interim is deducted: LHB's "40% Final Cash Dividend (including 18%
 interim cash dividend which has already been paid)" records **22%**.
 
@@ -293,8 +292,8 @@ poetry env use "C:\Users\ASUS\AppData\Local\Programs\Python\Python313\python.exe
 .venv\Scripts\python.exe -m pip install -e .
 ```
 
-`poetry install` cannot fetch new packages on this machine — see *Things worth
-knowing*. pip works, so use it for dependency changes.
+`poetry install` cannot fetch new packages on this machine — see _Things worth
+knowing_. pip works, so use it for dependency changes.
 
 ## Running
 
@@ -346,10 +345,14 @@ as JSON by `python-json-logger` (configured in
 `config/hydra/job_logging/logger.yaml`):
 
 ```json
-{"timestamp": "2026-08-12 23:36:57,157", "level": "INFO",
- "logger": "dse_scrapers.scrapers.trade_and_block",
- "message": "Fetched public-market trades",
- "instruments": 637, "source": "day_end_archive.php"}
+{
+  "timestamp": "2026-08-12 23:36:57,157",
+  "level": "INFO",
+  "logger": "dse_scrapers.scrapers.trade_and_block",
+  "message": "Fetched public-market trades",
+  "instruments": 637,
+  "source": "day_end_archive.php"
+}
 ```
 
 Context goes in `extra={...}` and becomes top-level JSON keys, so the logs can
@@ -365,7 +368,7 @@ choose from.
 **Company pages are retried until they are usable.** DSE occasionally serves a
 `displayCompany.php` response that returns 200 and parses without error but
 carries no record — either the body is cut short (one arrived at 83 KB against
-a ~300 KB floor) or the *Type of Instrument* cell reads the literal `Unknown`.
+a ~300 KB floor) or the _Type of Instrument_ cell reads the literal `Unknown`.
 Roughly 1 fetch in 2,000, which over 637 instruments landed in about a third of
 runs.
 
@@ -373,7 +376,7 @@ Left alone this was silent data loss: `market-cap` keeps only recognised
 instrument types, so an `Unknown` was filed as debt and the instrument vanished
 from the sheet. The same date produced 396, 395 and 394 rows on different runs,
 each time losing a different company — and the only visible symptom was a
-*DSEX constituents absent* warning, which fires solely when the lost instrument
+_DSEX constituents absent_ warning, which fires solely when the lost instrument
 happens to be an index constituent. Non-constituents disappeared with no log
 line at all.
 
@@ -457,6 +460,3 @@ data/
 outputs/<scraper>/          newest file only, replaced each run
 logs/<date>/<time>/         run history: dated copy, log, config snapshot
 ```
-=======
-# research_total_scrapper
->>>>>>> 0fa982a79fbba55fc093987b9a837fda05bab194
